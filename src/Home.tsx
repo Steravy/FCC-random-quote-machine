@@ -1,7 +1,7 @@
-import { Fragment, useState } from 'react';
-import './App.css';
+import { useState } from 'react';
 
 import getRandomQuote from './providers/getRandomQuote';
+import QuoteDisplayer from './components/QuoteDisplayer';
 
 
 export interface Quote {
@@ -13,9 +13,9 @@ function Home() {
   const [quote, setQuote] = useState<Quote>(getRandomQuote());
 
   return (
-    <Fragment>
-      <p>{quote.quote}</p>
-    </Fragment>
+    <main className='flex flex-col items-center justify-center h-[100vh]' >
+      <QuoteDisplayer quotes={quote} />
+    </main>
   )
 }
 
