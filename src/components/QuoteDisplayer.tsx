@@ -1,12 +1,14 @@
 import { BiSolidQuoteAltLeft } from 'react-icons/bi';
 import { FaTwitter } from 'react-icons/fa';
 import { Quote } from "../Home";
+import Button from './Button';
 
 interface QuoteDisplayerProps {
-    quotes: Quote
+    quotes: Quote;
+    onClick: () => void;
 }
 
-const QuoteDisplayer: React.FC<QuoteDisplayerProps> = ({ quotes }: QuoteDisplayerProps) => {
+const QuoteDisplayer: React.FC<QuoteDisplayerProps> = ({ quotes, onClick }: QuoteDisplayerProps) => {
 
     const { quote, author } = quotes;
 
@@ -14,7 +16,7 @@ const QuoteDisplayer: React.FC<QuoteDisplayerProps> = ({ quotes }: QuoteDisplaye
 
         <section className='flex flex-col gap-4 ' >
 
-            <article id="quote-box" className='flex flex-col gap-4 max-w-[90vw] lg:max-w-[35vw] bg-gray-700 text-white rounded-lg p-8' >
+            <article id="quote-box" className='flex flex-col gap-6 max-w-[90vw] lg:max-w-[35vw] bg-gray-700 text-white rounded-lg p-8' >
 
                 <article className='flex flex-row gap-3' >
                     <i>
@@ -26,13 +28,17 @@ const QuoteDisplayer: React.FC<QuoteDisplayerProps> = ({ quotes }: QuoteDisplaye
                     <span id="author" > - {author}</span>
                 </article>
 
-                <article className='flex flex-row gap-3' >
-                    <a target="_blank" href={`https://twitter.com/intent/tweet?text=${quote} - ${author}`}>
-                        <FaTwitter size={25} />
-                    </a>
-                    <i>
-                        <BiSolidQuoteAltLeft size={30} />
-                    </i>
+                <article className='flex flex-row items-center justify-between' >
+                    <div className='flex flex-row items-center gap-3' >
+                        <a target="_blank" href={`https://twitter.com/intent/tweet?text=${quote} - ${author}`}>
+                            <FaTwitter size={25} />
+                        </a>
+                        <i>
+                            <BiSolidQuoteAltLeft size={30} />
+                        </i>
+                    </div>
+
+                    <Button label='New quote' onClick={onClick} />
                 </article>
 
             </article>
