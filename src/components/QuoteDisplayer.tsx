@@ -24,9 +24,9 @@ const QuoteDisplayer: React.FC<QuoteDisplayerProps> = ({ quotes, onClick, color,
                     <i>
                         <BiSolidQuoteAltLeft size={30} />
                     </i>
-                    <p id="text" className='text-start text-xl md:text-3xl font-normal' >{quote}</p>
+                    <p id="text" className='text-start text-xl md:text-2xl font-normal' >{quote}</p>
                 </article>
-                <article className='flex flex-row justify-end' >
+                <article className='flex flex-row justify-end font-normal ' >
                     <span id="author" > - {author}</span>
                 </article>
 
