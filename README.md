@@ -4,7 +4,7 @@ This is a web application built with React as part of the freeCodeCamp projects 
 I hope you like my implementation of it!
 
 <div align="center">
-  <img src="https://github.com/Steravy/FCC-random-quote-machine/blob/main/public/rqm.png" alt="Random Quote Generator" width="500px" height='auto' />
+  <img src="https://github.com/Steravy/FCC-random-quote-machine/blob/main/public/rqm.png" alt="Random Quote Generator" width="800px" height='auto' />
 </div>
 
 ## Features
