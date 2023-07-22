@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import getRandomQuote from './providers/getRandomQuote';
 import QuoteDisplayer from './components/QuoteDisplayer';
+import setRandomColor from './providers/setRandomColor';
 
 
 export interface Quote {
@@ -11,10 +12,11 @@ export interface Quote {
 function Home() {
 
   const [quote, setQuote] = useState<Quote>(getRandomQuote());
+  const [color, setColor] = useState<string>(setRandomColor());
 
   return (
-    <main className='flex flex-col items-center justify-center h-[100vh]' >
-      <QuoteDisplayer quotes={quote} onClick={() => setQuote(getRandomQuote())} />
+    <main className='flex flex-col items-center justify-center h-[100vh] w-full' style={{ backgroundColor: color }} >
+      <QuoteDisplayer quotes={quote} onClick={() => setQuote(getRandomQuote())} color={color} colorSetter={() => setColor(setRandomColor())} />
     </main>
   )
 }

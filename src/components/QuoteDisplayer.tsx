@@ -6,17 +6,19 @@ import Button from './Button';
 interface QuoteDisplayerProps {
     quotes: Quote;
     onClick: () => void;
+    color: string;
+    colorSetter: () => void;
 }
 
-const QuoteDisplayer: React.FC<QuoteDisplayerProps> = ({ quotes, onClick }: QuoteDisplayerProps) => {
+const QuoteDisplayer: React.FC<QuoteDisplayerProps> = ({ quotes, onClick, color, colorSetter }: QuoteDisplayerProps) => {
 
     const { quote, author } = quotes;
 
     return (
 
-        <section className='flex flex-col gap-4 ' >
+        <section className='flex flex-col gap-4' style={{ color: color }} >
 
-            <article id="quote-box" className='flex flex-col gap-6 max-w-[90vw] lg:max-w-[35vw] bg-gray-700 text-white rounded-lg p-8' >
+            <article id="quote-box" className='flex flex-col gap-6 w-[90vw] lg:w-[35vw] bg-white shadow-lg rounded-lg p-8' >
 
                 <article className='flex flex-row gap-3' >
                     <i>
@@ -30,7 +32,8 @@ const QuoteDisplayer: React.FC<QuoteDisplayerProps> = ({ quotes, onClick }: Quot
 
                 <article className='flex flex-row items-center justify-between' >
                     <div className='flex flex-row items-center gap-3' >
-                        <a target="_blank" href={`https://twitter.com/intent/tweet?text=${quote} - ${author}`}>
+                        {/* <a target="_blank" href={`https://twitter.com/intent/tweet?text=${quote} - ${author}`}> */}
+                        <a target="_top" href="twitter.com/intent/tweet">
                             <FaTwitter size={25} />
                         </a>
                         <i>
@@ -38,12 +41,12 @@ const QuoteDisplayer: React.FC<QuoteDisplayerProps> = ({ quotes, onClick }: Quot
                         </i>
                     </div>
 
-                    <Button label='New quote' onClick={onClick} />
+                    <Button label='New quote' onClick={onClick} color={color} colorSetter={colorSetter} />
                 </article>
 
             </article>
 
-            <span className='text-center text-sm font-light' > by Stefan Vitoria</span>
+            <p className='text-center text-md font-light' ><span className='text-sm' >by </span> Stefan Vitoria</p>
 
         </section>
     )

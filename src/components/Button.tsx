@@ -1,25 +1,28 @@
 import { useCallback } from "react";
 
 interface ButtonProps {
-    label: string
-    onClick: () => void
+    label: string;
+    onClick: () => void;
+    color: string;
+    colorSetter: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ label, onClick }: ButtonProps) => {
+const Button: React.FC<ButtonProps> = ({ label, onClick, color, colorSetter }: ButtonProps) => {
 
     const handleClick = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
 
         onClick();
+        colorSetter();
 
-    }, []);
+    }, [onClick, colorSetter]);
 
     return (
 
-        <button onClick={ (e) => handleClick(e)} id="new-quote" className=" bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded" >
+        <button onClick={(e) => handleClick(e)} id="new-quote" className={`text-white font-bold py-2 px-4 rounded`} style={{ backgroundColor: color }} >
             {label}
         </button>
     )
 }
 
-export default Button
+export default Button;
