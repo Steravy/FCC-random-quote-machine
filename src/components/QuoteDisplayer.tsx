@@ -30,14 +30,11 @@ const QuoteDisplayer: React.FC<QuoteDisplayerProps> = ({ quotes, onClick, color,
                     <span id="author" > - {author}</span>
                 </article>
 
-                <article className='flex flex-row items-center justify-between' >
+                <article className='flex flex-row items-center justify-start gap-5' >
                     <div className='flex flex-row items-center gap-3' >
-                        <a id='tweet-quote' target="_top" href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=${quote}`}>
-                            <FaTwitter size={25} />
+                        <a id='tweet-quote' target="_blank" href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=${quote}`}>
+                            <FaTwitter size={30} />
                         </a>
-                        <i>
-                            <BiSolidQuoteAltLeft size={30} />
-                        </i>
                     </div>
 
                     <Button label='New quote' onClick={onClick} color={color} colorSetter={colorSetter} />
@@ -45,7 +42,7 @@ const QuoteDisplayer: React.FC<QuoteDisplayerProps> = ({ quotes, onClick, color,
 
             </article>
 
-            <p className='text-center text-md font-light' ><span className='text-sm' >by </span> Stefan Vitoria</p>
+            <p className='text-center text-white text-md font-light' ><span className='text-sm' >by </span> Stefan Vitoria</p>
 
         </section>
     )
