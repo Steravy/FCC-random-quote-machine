@@ -19,7 +19,7 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, color, colorSetter }: B
 
     return (
 
-        <button onClick={(e) => handleClick(e)} id="new-quote" className={`text-white font-bold py-2 px-4 rounded`} style={{ backgroundColor: color }} >
+        <button onClick={(e) => handleClick(e)} id="new-quote" className={`text-white font-bold py-2 px-4 rounded`} style={{ backgroundColor: color, transition: 'all 1s' }} >
             {label}
         </button>
     )

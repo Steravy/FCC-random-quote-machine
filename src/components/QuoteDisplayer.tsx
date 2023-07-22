@@ -16,7 +16,7 @@ const QuoteDisplayer: React.FC<QuoteDisplayerProps> = ({ quotes, onClick, color,
 
     return (
 
-        <section className='flex flex-col gap-4' style={{ color: color }} >
+        <section className='flex flex-col gap-4' style={{ color: color, transition: 'all 1s' }} >
 
             <article id="quote-box" className='flex flex-col gap-6 w-[90vw] lg:w-[35vw] bg-white shadow-lg rounded-lg p-8' >
 
@@ -32,8 +32,7 @@ const QuoteDisplayer: React.FC<QuoteDisplayerProps> = ({ quotes, onClick, color,
 
                 <article className='flex flex-row items-center justify-between' >
                     <div className='flex flex-row items-center gap-3' >
-                        {/* <a target="_blank" href={`https://twitter.com/intent/tweet?text=${quote} - ${author}`}> */}
-                        <a target="_top" href="twitter.com/intent/tweet">
+                        <a id='tweet-quote' target="_top" href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=${quote}`}>
                             <FaTwitter size={25} />
                         </a>
                         <i>

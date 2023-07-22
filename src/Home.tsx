@@ -15,7 +15,7 @@ function Home() {
   const [color, setColor] = useState<string>(setRandomColor());
 
   return (
-    <main className='flex flex-col items-center justify-center h-[100vh] w-full' style={{ backgroundColor: color }} >
+    <main className='flex flex-col items-center justify-center h-[100vh] w-full' style={{ backgroundColor: color, transition: 'all 1s' }} >
       <QuoteDisplayer quotes={quote} onClick={() => setQuote(getRandomQuote())} color={color} colorSetter={() => setColor(setRandomColor())} />
     </main>
   )
