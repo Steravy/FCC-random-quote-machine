@@ -21,7 +21,7 @@ Follow these instructions to get the project up and running on your local machin
 2. Navigate to the project folder: `cd random-quote-generator`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm run dev`
-5. Open your web browser and visit: `http://localhost:5173/` - i used vite to started the ptoject.
+5. Open your web browser and visit: `http://localhost:5173/` - i used vite to start the ptoject.
 
 ## Technologies Used
 
@@ -34,7 +34,7 @@ Follow these instructions to get the project up and running on your local machin
 
 ## Author
 
-Stefan Vitoria - [github.com/Steravy](https://github.com/Steravy)
+[Stefan Vitoria](https://github.com/Steravy)
 
 ## License
 
